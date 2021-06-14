@@ -1,0 +1,15 @@
+version: "3.2"
+services:
+  base:
+    image: mybase
+    build: ./baseimage
+
+  app_v1:
+    build: ./v1
+    depends_on:
+      - base
+
+  app_v2:
+    build: ./v2
+    depends_on:
+      - base
